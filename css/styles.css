@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --theme-color: #545454;
+  --primary-color: #e1e1e1;
+  --secundary-color: #fefefe;
+  --text-color-inverse: white;
+  --text-color: #e1e1e1;
+  --navbar-shallow-color: #e5e5e5;
+  --menu-mobile-background-color: #3a4460;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: gray;
+  min-height: 100vh;
+  color: var(--text-color);
+  padding-top: 70px;
+}
+
+section[id] {
+  scroll-margin-top: 70px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.horizontal-padding {
+  padding-left: 25px;
+  padding-right: 25px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.vertical-padding {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.topheader {
+  box-shadow: 0 4px 5px var(--navbar-shallow-color);
+  position: fixed;
+  background-color: var(--theme-color);
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.logo img {
+  border-radius: 50%;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 0 15px;
+}
+
+.menu a {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 50px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.menu a::after {
+  content: "";
+  background-color: var(--secundary-color);
+  position: absolute;
+  left: 0;
+  top: calc(100% + 4px);
+  width: 100%;
+  height: 4px;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.menu a.selected::after,
+.menu a:hover::after {
+  opacity: 0.8;
+}
+
+.menu a:hover {
+  color: var(--primary-color);
+}
+
+.open-menu,
+.close-menu {
+  display: none;
+}
+
+.logotype {
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background-color: #e1e1e1;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.2);
+}
+
+.container .left-side {
+    position: relative;
+    background-color: #545454;
+    padding: 40px;
+}
+
+.profile-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gray;
+}
+
+.profile-text .img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.profile-text .img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-text h2 {
+    color: #fefefe;
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4em;
+}
+
+.profile-text h2 span{
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+.contact {
+    padding-top: 40px;
+    
+}
+
+.contact a {
+    color: #fefefe;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    color: #fefefe;
+    text-decoration: none;
+}
+
+
+.title {
+    color: #fefefe;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 25px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.contact ul {
+    position: relative;
+}
+
+.contact ul li {
+    list-style: none;
+    position: relative;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.contact ul li  .icon{
+    display: inline-block;
+    width: 30px;
+    font-size: 18px;
+}
+
+.contact ul li  .text{
+    color: #fefefe;
+    font-weight: 300;
+}
+
+.contact.education li {
+    margin-bottom: 15px;
+}
+
+.contact.education h5 {
+    color: #fefefe;
+    font-weight: 400;
+}
+
+.contact.education h4:nth-child(2){
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.contact.education h4 {
+    color: #fff;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+.contact.language .percent {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background-color: grey ;
+    display: block;
+    margin-top: 5px;
+}
+.contact.language .percent div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: green;
+}
+
+.container .rigth-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #e1e1e1;
+    padding: 40px;
+}
+
+.about-me {
+    margin-bottom: 50px;
+}
+
+.about-me:last-child {
+    margin-bottom: 0;
+}
+
+.title2 {
+    color: #61625D;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.about-me p {
+    color: #333;
+}
+
+.about-me .box {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.about-me .box .year-company {
+    min-width: 150px;
+}
+
+.about-me .box .year-company h5 {
+    text-transform: uppercase;
+    color: grey;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.about-me .box .text h4 {
+    text-transform: uppercase;
+    color: #61625D;
+    font-size: 16px;
+}
+
+.skills {
+    width: 100%;
+}
+
+.skills .box {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills .box h4 {
+    text-transform: uppercase;
+    color: grey;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.skills .box .percent{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: grey;
+}
+
+.skills .box .percent div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: green;
+}
+
+
+.hobbies ul {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+}
+
+.hobbies ul li {
+    list-style: none;
+    color: #333;
+    font-weight: 500;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.hobbies ul li .bi {
+    color: #61625D;
+}
+
+.hobbies a {
+    text-decoration: none;
+    color: #545454;
+}
+
+/* Media Queries */
+
+@media (min-width: 950px) {
+  .horizontal-padding {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  .vertical-padding {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 950px) {
+/* Menu */
+.menu {
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  background-color: var(--menu-mobile-background-color);
+  height: 100%;
+  overflow-y: auto;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.menu li {
+  padding: 0;
+}
+
+.menu a {
+  color: var(--text-color-inverse);
+  line-height: 70px;
+  font-size: 25px;
+}
+
+.open-menu,
+.close-menu {
+  display: block;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.close-menu {
+  align-self: flex-end;
+  padding: 20px 15px;
+}
+
+.menu_opened {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.open-menu:focus:not(:focus-visible),
+.close-menu:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.menu a::after {
+  content: none;
+}
+
+.menu a:hover,
+.menu a.selected {
+  color: var(--secundary-color);
+}
+}
+
+
+@media (max-width: 1000px){
+    .container{
+        margin: 10px;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .hobbies ul{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (max-width: 600px){
+    .about-me .box {
+        flex-direction: column;
+    }
+    .about-me .box .year-company {
+        min-width: 150px;
+        margin-bottom: 5px;
+    }
+    .hobbies ul{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .skills .box {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
